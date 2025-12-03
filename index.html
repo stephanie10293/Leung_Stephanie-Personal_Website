@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Single Page Site</title>
+
+  <!-- Elegant built‑in calligraphy-like font (Great Vibes as fallback) -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=IBM+Plex+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "IBM Plex Sans", sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    h1, h2, .accent {
+      font-family: "Great Vibes", cursive;
+      font-size: 72px;
+      font-weight: 400;
+      margin: 0;
+      line-height: 1.1;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      font-family: "IBM Plex Sans", sans-serif;
+      font-size: 15px;
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(6px);
+      z-index: 1000;
+      box-sizing: border-box;
+    }
+
+    .nav-left a, .nav-right a {
+      color: black;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: 400;
+    }
+
+    .nav-left a {
+      margin-left: 0;
+    }
+
+    section {
+      width: 100%;
+      padding-top: 120px; /* space under nav */
+      padding-left: 40px;
+      box-sizing: border-box;
+    }
+
+    #section1 { height: 1840px; background: #f7f3ef; }
+    #section2 { height: 2190px; background: #eae6ff; }
+    #section3 { height: 3070px; background: #f0fff2; }
+    #section4 { height: 3777px; background: #fff6e8; }
+    #section5 { height: 2000px; background: #f0f0ff; overflow: auto; }
+
+    .inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-left"><a href="#section1">Home</a></div>
+    <div class="nav-right">
+      <a href="#section2">Style</a>
+      <a href="#section3">My Space</a>
+      <a href="#section4">Docs</a>
+      <a href="#section5">Media</a>
+    </div>
+  </nav>
+
+  <section id="section1">
+    <div class="inner">
+      <h1 class="accent">Home</h1>
+      <p>Intro content goes here.</p>
+    </div>
+  </section>
+
+  <section id="section2">
+    <div class="inner">
+      <h1 class="accent">Style</h1>
+      <p>Style section content.</p>
+    </div>
+  </section>
+
+  <section id="section3">
+    <div class="inner">
+      <h1 class="accent">My Space</h1>
+      <p>Your custom content space.</p>
+    </div>
+  </section>
+
+  <section id="section4">
+    <div class="inner">
+      <h1 class="accent">Docs</h1>
+      <p>Documents section content.</p>
+    </div>
+  </section>
+
+  <section id="section5">
+    <div class="inner">
+      <h1 class="accent">Media</h1>
+      <p>Media section content.</p>
+    </div>
+  </section>
+
+</body>
+</html>
