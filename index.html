@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Single Page Site</title>
 
-  <!-- Elegant built-in calligraphy-like font (Great Vibes as fallback) -->
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=IBM+Plex+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
@@ -33,7 +33,7 @@
       backdrop-filter: blur(6px);
       z-index: 1000;
       box-sizing: border-box;
-      max-width: 1200px;
+      width: 1200px;  /* full container width */
       margin: 0 auto;
       left: 0;
       right: 0;
@@ -56,7 +56,7 @@
     }
 
     .nav-left a {
-      margin-left: 10;
+      margin-left: 10px;
     }
 
     .container {
@@ -69,11 +69,12 @@
     section {
       width: 100%;
       padding-top: 120px;
-      padding-left: 24px;
-      padding-right: 24px;
+      padding-left: 0;
+      padding-right: 0;
       box-sizing: border-box;
     }
 
+    /* SECTION 1 */
     #section1 { 
       height: 1820px; 
       background: #f7f3ef; 
@@ -132,7 +133,6 @@
       pointer-events: none;
     }
 
-    /* ABOUT ME + name */
     #section1 .about-title {
       position: absolute;
       top: 785px;
@@ -153,7 +153,6 @@
       font-weight: 400;
     }
 
-    /* ABOUT ME PARAGRAPH 1 — WIDTH 547PX */
     #section1 .about-text-1 {
       position: absolute;
       top: 877px;
@@ -166,7 +165,6 @@
       text-align: left;
     }
 
-    /* ABOUT ME PARAGRAPH 2 — WIDTH 547PX */
     #section1 .about-text-2 {
       position: absolute;
       top: 1070px;
@@ -179,7 +177,6 @@
       text-align: left;
     }
 
-    /* NEW TEXT ELEMENT */
     #section1 .about-text-3 {
       position: absolute;
       top: 1470px;
@@ -192,16 +189,18 @@
       text-align: left;
     }
 
-    /* SECTION 2 STYLING */
+    #section1 img.home1 { position: absolute; top: 1050px; left: 200px; width: 428px; height: 544px; object-fit: cover;}
+    #section1 img.home2 { position: absolute; top: 870px; left: 667px; width: 328px; height: 374px; object-fit: cover;}
+
+    /* SECTION 2 */
     #section2 {
-      height: 2190px;
       background: white;
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
       align-items: center;
       text-align: center;
       padding-top: 50px;
+      position: relative;
     }
 
     #section2 .section2-title,
@@ -209,19 +208,41 @@
       font-family: 'Great Vibes', cursive;
       font-size: 100px;
       color: black;
-      width: 100%;
-      text-align: center;
       margin: 20px 0;
+    }
+
+    #section2 .sec2-left,
+    #section2 .sec2-center,
+    #section2 .sec2-right {
+      display: inline-block;
+      vertical-align: bottom;
+    }
+
+    #section2 .sec2-left { height: 370px; margin-right: 34px; }
+    #section2 .sec2-center { height: 340px; margin: 0 34px; }
+    #section2 .sec2-right { height: 370px; margin-left: 34px; }
+
+    #section2 .section2-text {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 18px;
+      color: black;
+      text-align: center;
+      width: 543px;
+      margin: 20px auto 40px auto;
+    }
+
+    #section2 .section2-long-img {
+      width: 1200px;
+      height: 624px;
+      object-fit: cover;
+      margin-bottom: 50px;
     }
 
     #section3 { height: 3070px; background: #f0fff2; }
     #section4 { height: 3777px; background: #fff6e8; }
     #section5 { height: 2000px; background: #f0f0ff; overflow: auto; }
 
-    .inner {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+    .inner { max-width: 1200px; margin: 0 auto; }
   </style>
 </head>
 <body>
@@ -240,7 +261,8 @@
 
   <div class="container"><!-- MAIN CONTENT CONTAINER -->
 
-  <section id="section1">
+    <!-- SECTION 1 -->
+    <section id="section1">
       <img src="landing.png" alt="Landing Image">
       <div class="overlay-text">Everyday Rituals</div>
       <div class="sub-text">What keeps me creative in my day to day</div>
@@ -266,40 +288,51 @@
         I’m drawn to anything that feels intentional: a curated outfit, a cozy corner, a playlist that sets the tone.
       </div>
 
-      <img src="home1.jpeg" alt="Home Image 1" 
-           style="position: absolute; top: 1050px; left: 200px; width: 428px; height: 544px; object-fit: cover;">
-      <img src="home2.png" alt="Home Image 2" 
-           style="position: absolute; top: 870px; left: 667px; width: 328px; height: 374px; object-fit: cover;">
-  </section>
+      <img src="home1.jpeg" alt="Home Image 1" class="home1">
+      <img src="home2.png" alt="Home Image 2" class="home2">
+    </section>
 
-  <!-- UPDATED SECTION 2 -->
-  <section id="section2">
-    <div class="inner">
+    <!-- SECTION 2 -->
+    <section id="section2">
       <h1 class="section2-title">Style &</h1>
       <h1 class="section2-subtitle">Self-Expression</h1>
-    </div>
-  </section>
 
-  <section id="section3">
-    <div class="inner">
-      <h1 class="accent">My Space</h1>
-      <p>Your custom content space.</p>
-    </div>
-  </section>
+      <div>
+        <img src="sec2_left.jpeg" alt="Left" class="sec2-left">
+        <img src="shoes.jpeg" alt="Center" class="sec2-center">
+        <img src="sec2_right.jpeg" alt="Right" class="sec2-right">
+      </div>
 
-  <section id="section4">
-    <div class="inner">
-      <h1 class="accent">Docs</h1>
-      <p>Documents section content.</p>
-    </div>
-  </section>
+      <div class="section2-text">
+        I love planning my outfits in advance because it gives me a quiet moment to think, experiment, and play with different combinations before the day even begins. This little ritual of setting aside time to get ready keeps me grounded, inspired, and connected to my creativity.
+      </div>
 
-  <section id="section5">
-    <div class="inner">
-      <h1 class="accent">Media</h1>
-      <p>Media section content.</p>
-    </div>
-  </section>
+      <img src="sec2_long.jpeg" alt="Long" class="section2-long-img">
+    </section>
+
+    <!-- SECTION 3 -->
+    <section id="section3">
+      <div class="inner">
+        <h1 class="accent">My Space</h1>
+        <p>Your custom content space.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 4 -->
+    <section id="section4">
+      <div class="inner">
+        <h1 class="accent">Docs</h1>
+        <p>Documents section content.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 5 -->
+    <section id="section5">
+      <div class="inner">
+        <h1 class="accent">Media</h1>
+        <p>Media section content.</p>
+      </div>
+    </section>
 
   </div><!-- MAIN CONTAINER END -->
 
