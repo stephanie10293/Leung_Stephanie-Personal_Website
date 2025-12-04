@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Single Page Site</title>
 
-  <!-- Elegant built‑in calligraphy-like font (Great Vibes as fallback) -->
+  <!-- Elegant built-in calligraphy-like font (Great Vibes as fallback) -->
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=IBM+Plex+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
@@ -26,17 +26,25 @@
     nav {
       position: fixed;
       top: 0;
-      width: 100%;
       height: 130px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 40px;
       font-family: "IBM Plex Sans", sans-serif;
       font-size: 12px;
       background: #EDEDED;
       backdrop-filter: blur(6px);
       z-index: 1000;
+      box-sizing: border-box;
+      max-width: 1200px;
+      margin: 0 auto;
+      left: 0;
+      right: 0;
+    }
+
+    nav .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 100%;
+      padding: 20px 0;
       box-sizing: border-box;
     }
 
@@ -48,7 +56,14 @@
     }
 
     .nav-left a {
-      margin-left: 0;
+      margin-left: 10;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative; 
+      width: 100%;
     }
 
     section {
@@ -60,7 +75,7 @@
     }
 
     #section1 { 
-      height: 1840px; 
+      height: 1820px; 
       background: #f7f3ef; 
       display: flex;
       justify-content: center;
@@ -72,7 +87,7 @@
     }
 
     #section1 img {
-      width: 1150; /* 24px gap on each side */
+      width: 1150px;
       max-width: 1200px;
       height: 520px;
       object-fit: cover;
@@ -83,19 +98,122 @@
 
     #section1 .overlay-text {
       position: absolute;
-      top: 400px;
+      top: 365px;
       left: 50%;
       transform: translateX(-50%);
       color: white;
       font-family: 'Great Vibes', cursive;
-      font-size: 96px;
-      white-space: nowrap; /* force one line */
+      font-size: 160px;
+      white-space: nowrap;
       text-align: center;
       max-width: 1200px;
       pointer-events: none;
     }
 
-    #section2 { height: 2190px; background: #eae6ff; }
+    #section1 .sub-text {
+      position: absolute;
+      top: 570px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 20px;
+      text-align: center;
+      max-width: 1200px;
+    }
+
+    #section1 .bottom-left-text {
+      position: absolute;
+      top: 685px;
+      left: 35px;
+      color: white;
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 20px;
+      pointer-events: none;
+    }
+
+    /* ABOUT ME + name */
+    #section1 .about-title {
+      position: absolute;
+      top: 785px;
+      left: 24px;
+      color: black;
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 32px;
+      font-weight: 0;
+    }
+
+    #section1 .about-name {
+      position: absolute;
+      top: 818px;
+      left: 24px;
+      color: black;
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 32px;
+      font-weight: 400;
+    }
+
+    /* ABOUT ME PARAGRAPH 1 — WIDTH 547PX */
+    #section1 .about-text-1 {
+      position: absolute;
+      top: 877px;
+      left: 24px;
+      width: 547px;
+      color: black;
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 18px;
+      line-height: 1.6;
+      text-align: left;
+    }
+
+    /* ABOUT ME PARAGRAPH 2 — WIDTH 547PX */
+    #section1 .about-text-2 {
+      position: absolute;
+      top: 1070px;
+      left: 24px;
+      width: 547px;
+      color: black;
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 18px;
+      line-height: 1.6;
+      text-align: left;
+    }
+
+    /* NEW TEXT ELEMENT */
+    #section1 .about-text-3 {
+      position: absolute;
+      top: 1470px;
+      left: 667px;
+      width: 328px;
+      color: black;
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 20px;
+      line-height: 1.4;
+      text-align: left;
+    }
+
+    /* SECTION 2 STYLING */
+    #section2 {
+      height: 2190px;
+      background: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      text-align: center;
+      padding-top: 50px;
+    }
+
+    #section2 .section2-title,
+    #section2 .section2-subtitle {
+      font-family: 'Great Vibes', cursive;
+      font-size: 100px;
+      color: black;
+      width: 100%;
+      text-align: center;
+      margin: 20px 0;
+    }
+
     #section3 { height: 3070px; background: #f0fff2; }
     #section4 { height: 3777px; background: #fff6e8; }
     #section5 { height: 2000px; background: #f0f0ff; overflow: auto; }
@@ -109,24 +227,56 @@
 <body>
 
   <nav>
-    <div class="nav-left"><a href="#section1">Home</a></div>
-    <div class="nav-right">
-      <a href="#section2">Style</a>
-      <a href="#section3">My Space</a>
-      <a href="#section4">Docs</a>
-      <a href="#section5">Media</a>
+    <div class="nav-container">
+      <div class="nav-left"><a href="#section1">Home</a></div>
+      <div class="nav-right">
+        <a href="#section2">STYLE</a>
+        <a href="#section3">MY SPACE</a>
+        <a href="#section4">DOCS</a>
+        <a href="#section5">MEDIA</a>
+      </div>
     </div>
   </nav>
+
+  <div class="container"><!-- MAIN CONTENT CONTAINER -->
 
   <section id="section1">
       <img src="landing.png" alt="Landing Image">
       <div class="overlay-text">Everyday Rituals</div>
+      <div class="sub-text">What keeps me creative in my day to day</div>
+      <div class="bottom-left-text">Stephanie Leung</div>
+
+      <div class="about-title">ABOUT ME:</div>
+      <div class="about-name">STEPHANIE LEUNG</div>
+
+      <div class="about-text-1">
+        Hi, I’m Stephanie, a second-year GBDA student. My mood and creativity are shaped by the spaces I create, 
+        whether that’s the way I style my room or how I express myself through fashion. With so much of our 
+        lives centered around passive scrolling and ai, I’ve learned how important it is to build habits that 
+        keep me thinking, making, and engaging creatively.
+      </div>
+
+      <div class="about-text-2">
+        For me, creativity isn’t just about producing something new — it’s about infusing
+        personal style, perspective, and meaning into everything I do. I’m drawn to
+        projects and spaces that let me experiment, stay curious, and reflect who I am.
+      </div>
+
+      <div class="about-text-3">
+        I’m drawn to anything that feels intentional: a curated outfit, a cozy corner, a playlist that sets the tone.
+      </div>
+
+      <img src="home1.jpeg" alt="Home Image 1" 
+           style="position: absolute; top: 1050px; left: 200px; width: 428px; height: 544px; object-fit: cover;">
+      <img src="home2.png" alt="Home Image 2" 
+           style="position: absolute; top: 870px; left: 667px; width: 328px; height: 374px; object-fit: cover;">
   </section>
 
+  <!-- UPDATED SECTION 2 -->
   <section id="section2">
     <div class="inner">
-      <h1 class="accent">Style</h1>
-      <p>Style section content.</p>
+      <h1 class="section2-title">Style &</h1>
+      <h1 class="section2-subtitle">Self-Expression</h1>
     </div>
   </section>
 
@@ -150,6 +300,8 @@
       <p>Media section content.</p>
     </div>
   </section>
+
+  </div><!-- MAIN CONTAINER END -->
 
 </body>
 </html>
