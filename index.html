@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Single Page Site</title>
 
   <!-- Elegant built‑in calligraphy-like font (Great Vibes as fallback) -->
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=IBM+Plex+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=IBM+Plex+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
     body {
@@ -27,13 +27,14 @@
       position: fixed;
       top: 0;
       width: 100%;
+      height: 130px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 20px 40px;
       font-family: "IBM Plex Sans", sans-serif;
-      font-size: 15px;
-      background: rgba(255, 255, 255, 0.8);
+      font-size: 12px;
+      background: #EDEDED;
       backdrop-filter: blur(6px);
       z-index: 1000;
       box-sizing: border-box;
@@ -52,19 +53,55 @@
 
     section {
       width: 100%;
-      padding-top: 120px; /* space under nav */
-      padding-left: 40px;
+      padding-top: 120px;
+      padding-left: 24px;
+      padding-right: 24px;
       box-sizing: border-box;
     }
 
-    #section1 { height: 1840px; background: #f7f3ef; }
+    #section1 { 
+      height: 1840px; 
+      background: #f7f3ef; 
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      text-align: center;
+      padding-top: 0; 
+      box-sizing: border-box;
+      position: relative;
+    }
+
+    #section1 img {
+      width: 1150; /* 24px gap on each side */
+      max-width: 1200px;
+      height: 520px;
+      object-fit: cover;
+      display: block;
+      margin: 200px auto 0 auto;
+      box-sizing: border-box;
+    }
+
+    #section1 .overlay-text {
+      position: absolute;
+      top: 400px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      font-family: 'Great Vibes', cursive;
+      font-size: 96px;
+      white-space: nowrap; /* force one line */
+      text-align: center;
+      max-width: 1200px;
+      pointer-events: none;
+    }
+
     #section2 { height: 2190px; background: #eae6ff; }
     #section3 { height: 3070px; background: #f0fff2; }
     #section4 { height: 3777px; background: #fff6e8; }
     #section5 { height: 2000px; background: #f0f0ff; overflow: auto; }
 
     .inner {
-      max-width: 900px;
+      max-width: 1200px;
       margin: 0 auto;
     }
   </style>
@@ -82,10 +119,8 @@
   </nav>
 
   <section id="section1">
-    <div class="inner">
-      <h1 class="accent">Home</h1>
-      <p>Intro content goes here.</p>
-    </div>
+      <img src="landing.png" alt="Landing Image">
+      <div class="overlay-text">Everyday Rituals</div>
   </section>
 
   <section id="section2">
