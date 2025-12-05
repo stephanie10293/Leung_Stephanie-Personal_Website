@@ -32,8 +32,7 @@
       background: #EDEDED;
       backdrop-filter: blur(6px);
       z-index: 1000;
-      box-sizing: border-box;
-      width: 1200px;  /* full container width */
+      width: 1200px;
       margin: 0 auto;
       left: 0;
       right: 0;
@@ -55,10 +54,6 @@
       font-weight: 400;
     }
 
-    .nav-left a {
-      margin-left: 10px;
-    }
-
     .container {
       max-width: 1200px;
       margin: 0 auto;
@@ -68,22 +63,18 @@
 
     section {
       width: 100%;
-      padding-top: 120px;
-      padding-left: 0;
-      padding-right: 0;
       box-sizing: border-box;
     }
 
     /* SECTION 1 */
     #section1 { 
       height: 1820px; 
-      background: #f7f3ef; 
+      background: white; 
       display: flex;
       justify-content: center;
       align-items: flex-start;
       text-align: center;
       padding-top: 0; 
-      box-sizing: border-box;
       position: relative;
     }
 
@@ -94,7 +85,6 @@
       object-fit: cover;
       display: block;
       margin: 200px auto 0 auto;
-      box-sizing: border-box;
     }
 
     #section1 .overlay-text {
@@ -105,9 +95,7 @@
       color: white;
       font-family: 'Great Vibes', cursive;
       font-size: 160px;
-      white-space: nowrap;
       text-align: center;
-      max-width: 1200px;
       pointer-events: none;
     }
 
@@ -120,7 +108,6 @@
       font-family: 'IBM Plex Sans', sans-serif;
       font-size: 20px;
       text-align: center;
-      max-width: 1200px;
     }
 
     #section1 .bottom-left-text {
@@ -194,16 +181,25 @@
 
     /* SECTION 2 */
     #section2 {
+      height: 2000px;
       background: white;
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
-      padding-top: 50px;
+      padding-top: px;
       position: relative;
+      
     }
 
-    #section2 .section2-title,
+    #section2 .section2-title {
+      font-family: 'Great Vibes', cursive;
+      font-size: 100px;
+      text-align: center;
+      margin-top: 133px;
+      width: 100%;
+      color: black;
+    }
     #section2 .section2-subtitle {
       font-family: 'Great Vibes', cursive;
       font-size: 100px;
@@ -211,18 +207,26 @@
       margin: 20px 0;
     }
 
-    #section2 .sec2-left,
-    #section2 .sec2-center,
-    #section2 .sec2-right {
-      display: inline-block;
-      vertical-align: bottom;
+    .section2-images {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      width: 100%;
+      max-width: 1200px;
+      gap: 68px;
+      margin: 50px 0;
     }
 
-    #section2 .sec2-left { height: 370px; margin-right: 34px; }
-    #section2 .sec2-center { height: 340px; margin: 0 34px; }
-    #section2 .sec2-right { height: 370px; margin-left: 34px; }
+    .section2-images img {
+      display: block;
+      object-fit: cover;
+    }
 
-    #section2 .section2-text {
+    .sec2-left { height: 370px; width: auto; }
+    .sec2-center { height: 340px; width: auto; }
+    .sec2-right { height: 370px; width: auto; }
+
+    .section2-text {
       font-family: 'IBM Plex Sans', sans-serif;
       font-size: 18px;
       color: black;
@@ -231,15 +235,50 @@
       margin: 20px auto 40px auto;
     }
 
-    #section2 .section2-long-img {
+    .section2-long-img {
       width: 1200px;
       height: 624px;
       object-fit: cover;
       margin-bottom: 50px;
     }
+#section3 {
+    height: 2963px;
+    background: white;
+    width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    min-height: 500px; /* you can increase when you add more content */
+}
 
-    #section3 { height: 3070px; background: #f0fff2; }
-    #section4 { height: 3777px; background: #fff6e8; }
+.section3-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 100px;
+    text-align: center;
+    margin-top: 133px;
+    width: 100%;
+    color: black;
+}
+.section3-img {
+    display: block;
+    width: 1200px;
+    height: 660px;
+    object-fit: cover;
+    margin: 70px auto 0 auto; /* centers the image */
+}
+    #section4 { 
+      height: 3777px; 
+      background: white; 
+    }
+    
+    .section4-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 100px;
+    text-align: center;
+    margin-top: 133px;
+    width: 100%;
+    color: black;
+}
+
     #section5 { height: 2000px; background: #f0f0ff; overflow: auto; }
 
     .inner { max-width: 1200px; margin: 0 auto; }
@@ -259,7 +298,7 @@
     </div>
   </nav>
 
-  <div class="container"><!-- MAIN CONTENT CONTAINER -->
+  <div class="container">
 
     <!-- SECTION 1 -->
     <section id="section1">
@@ -293,38 +332,139 @@
     </section>
 
     <!-- SECTION 2 -->
-    <section id="section2">
-      <h1 class="section2-title">Style &</h1>
-      <h1 class="section2-subtitle">Self-Expression</h1>
+    <!-- UPDATED SECTION 2 -->
+<section id="section2" style="height: 2000px;">
+  <div class="inner">
+    <h1 class="section2-title">Style &</h1>
+    <h1 class="section2-subtitle">Self-Expression</h1>
 
-      <div>
-        <img src="sec2_left.jpeg" alt="Left" class="sec2-left">
-        <img src="shoes.jpeg" alt="Center" class="sec2-center">
-        <img src="sec2_right.jpeg" alt="Right" class="sec2-right">
-      </div>
+    <!-- Top three images -->
+    <div class="section2-images">
+      <img src="sec2_left.jpeg" alt="Left Image" class="sec2-left">
+      <img src="shoes.jpeg" alt="Center Image" class="sec2-center">
+      <img src="sec2_right.jpeg" alt="Right Image" class="sec2-right">
+    </div>
 
-      <div class="section2-text">
-        I love planning my outfits in advance because it gives me a quiet moment to think, experiment, and play with different combinations before the day even begins. This little ritual of setting aside time to get ready keeps me grounded, inspired, and connected to my creativity.
-      </div>
+    <!-- Centered text under top images -->
+    <p style="
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 18px;
+      color: black;
+      width: 543px;
+      text-align: center;
+      margin: 50px auto 0 auto;
+    ">
+      I love planning my outfits in advance because it gives me a quiet moment to think, experiment, and play with different combinations before the day even begins. This little ritual of setting aside time to get ready keeps me grounded, inspired, and connected to my creativity.
+    </p>
 
-      <img src="sec2_long.jpeg" alt="Long" class="section2-long-img">
-    </section>
+    <!-- Long image under text -->
+    <img src="sec2_long.jpeg" alt="Long Image" style="
+      width: 1200px;
+      height: 624px;
+      object-fit: cover;
+      display: block;
+      margin: 50px auto 0 auto;
+    ">
+
+    <!-- Bottom two images -->
+    <div class="section2-bottom-images" style="
+      display: flex;
+      justify-content: center;
+      gap: 68px;
+      margin-top: 50px;
+    ">
+      <img src="sec2_sit.png" alt="Left Bottom Image" style="height: auto; max-height: 370px;">
+      <img src="sec2_stuff.png" alt="Right Bottom Image" style="height: auto; max-height: 370px;">
+    </div>
+  </div>
+</section>
+
 
     <!-- SECTION 3 -->
-    <section id="section3">
-      <div class="inner">
-        <h1 class="accent">My Space</h1>
-        <p>Your custom content space.</p>
-      </div>
-    </section>
+<!-- SECTION 3 -->
+<section id="section3">
+  <!-- Section 3 Title -->
+  <div class="section3-title">My Space</div>
 
-    <!-- SECTION 4 -->
-    <section id="section4">
-      <div class="inner">
-        <h1 class="accent">Docs</h1>
-        <p>Documents section content.</p>
-      </div>
-    </section>
+  <!-- Table Image -->
+  <img src="table.jpeg" alt="Table Image" class="section3-img">
+
+  <!-- Main text under Table Image -->
+  <p style="
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 20px;
+    color: black;
+    text-align: center;
+    width: 723px;
+    line-height: 40px;
+    margin: 100px auto 0 auto;
+  ">
+    My room is a reflection of my mind: warm, lived-in, and always evolving. I keep candles lit, clothes displayed, and little corners curated because my environment shapes how I think and create. I love turning my space into something cozy and inspiring, where I can recharge and stay creative.
+  </p>
+
+  <!-- Dorm Images -->
+  <div style="
+    display: flex;
+    justify-content: center;
+    gap: 121px;
+    margin-top: 70px;
+  ">
+    <!-- Dorm 1 Image + Text -->
+    <div style="display: flex; flex-direction: column;">
+      <img src="dorm1.jpeg" alt="Dorm 1" style="width: 385px; height: 513px; object-fit: cover;">
+      <p style="
+        font-family: 'IBM Plex Sans', sans-serif;
+        font-size: 20px;
+        color: black;
+        text-align: left;
+        width: 385px;
+        margin-top: 20px;
+      ">
+        Even my dorm became my own. The pictures I choose to display on my wall — from artist posters to photos of people and memories I love — reflect the media and moments that inspire me.
+      </p>
+    </div>
+
+    <!-- Dorm 2 Image + Text -->
+    <div style="display: flex; flex-direction: column;">
+      <img src="dorm2.jpeg" alt="Dorm 2" style="width: 385px; height: 513px; object-fit: cover;">
+      <p style="
+        font-family: 'IBM Plex Sans', sans-serif;
+        font-size: 20px;
+        color: black;
+        text-align: left;
+        width: 385px;
+        margin-top: 20px;
+      ">
+        Surrounding myself with these visuals makes the space feel truly mine, and having this curated environment sparks my creativity every day.
+      </p>
+    </div>
+  </div>
+
+  <!-- Swirl Image -->
+  <img src="swirl.jpeg" alt="Swirl Image" style="
+    display: block;
+    width: 705px;
+    height: 170px;
+    object-fit: cover;
+    margin: 50px auto 0 auto;
+  ">
+  
+  <img src="imagestrip.jpeg" alt="Image Strip" style="
+  display: block;
+  width: 1200px;
+  height: 825px;
+  object-fit: cover;
+  margin: 50px auto 0 auto;
+">
+</section>
+
+
+<!-- SECTION 4 -->
+<section id="section4">
+  <div class="inner">
+    <h1 class="section4-title">Documentation</h1>
+  </div>
+</section>
 
     <!-- SECTION 5 -->
     <section id="section5">
@@ -334,7 +474,6 @@
       </div>
     </section>
 
-  </div><!-- MAIN CONTAINER END -->
-
+  </div>
 </body>
 </html>
