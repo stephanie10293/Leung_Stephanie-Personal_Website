@@ -47,12 +47,19 @@
       box-sizing: border-box;
     }
 
-    .nav-left a, .nav-right a {
-      color: black;
-      text-decoration: none;
-      margin-left: 20px;
-      font-weight: 400;
-    }
+   .nav-left a {
+  color: black;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: 400;
+}
+
+.nav-right a {
+  color: black;
+  text-decoration: none;
+  margin-right: 30px; /* increased from 20px to 30px */
+  font-weight: 400;
+}
 
     .container {
       max-width: 1200px;
@@ -279,8 +286,6 @@
     color: black;
 }
 
-    #section5 { height: 2000px; background: #f0f0ff; overflow: auto; }
-
     .inner { max-width: 1200px; margin: 0 auto; }
   </style>
 </head>
@@ -288,12 +293,15 @@
 
   <nav>
     <div class="nav-container">
-      <div class="nav-left"><a href="#section1">Home</a></div>
+<div class="nav-left">
+  <a href="#section1">
+    <img src="logo.jpeg" alt="Logo" style="height: 40px; width: auto;">
+  </a>
+</div>
       <div class="nav-right">
         <a href="#section2">STYLE</a>
         <a href="#section3">MY SPACE</a>
         <a href="#section4">DOCS</a>
-        <a href="#section5">MEDIA</a>
       </div>
     </div>
   </nav>
